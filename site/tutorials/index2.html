@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="My article">
+  <meta name="author" content="Anthony">
+
+  <title>Flask Article!!!</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Plugin CSS -->
+  <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/freelancer.min.css" rel="stylesheet">
+  <link href="../css/colorful.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-70951837-1', 'auto');
+    ga('send', 'pageview');
+  
+  </script>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img src="../img/PrettyPrinted_Avatar.png" width="30" height="30" >
+Pretty Printed</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#tutorials">Tutorials</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#courses">Courses</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#about">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#contact">Contact</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="https://courses.prettyprinted.com/courses/enrolled">View Your Courses</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Header -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container">
+      <h1 class="text-uppercase mb-0">Flask Article!!!</h1>
+    </div>
+  </header>
+
+  <!-- Header -->
+  <article class="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <p><a href="https://bitbucket.com">Get the code for this article here</a></p>  
+      <!-- markdown html goes here -->
+
+      <h1>mines_strat_gaz_nat</h1>
+
+<p>Projet Ecole des Mines de PARIS en partenariat avec E_Cube : </p>
+
+<ul>
+<li><em>Sebastian Partarrieu</em></li>
+<li><em>Pierre-Adrien Plessix</em></li>
+<li><em>Youri Tchouboukoff</em></li>
+</ul>
+
+<p>to install useful Paskages of this project type : <code>pip install -r requirements.py</code>
+<code>pip install -e</code></p>
+
+<h2>Partie 1 : Web_Scraping</h2>
+
+<p>Module scrap_saver qui a deux fonctions : initialiser la BDD et updater la BDD. </p>
+
+<p>Les données sont extraites depuis <code>https://www.powernext.com/futures-market-data</code> pour les prix <strong>futures</strong>. Tandis que les prix <strong>Spots</strong> sont issus de <code>https://www.powernext.com/spot-market-data</code>. </p>
+
+<p>Lorsque l'on s'intéresse à la structure générale du site, on comprend mieux comment l'on va s'attaquer à l'extraction des données. On comprend que le contenu est divisé en quatre ou cinq blocs, contenant chacun un graphique et une barre d'onglet permettant d'afficher les données du marché intéressant. </p>
+
+<p>Cependant le principal problème est que les données ne sont pas stoquées en propre dans le code du site, mais son acquise par une requête d'un script <code>JavaScript</code> à une base de donnée extérieure au site. Il est donc nécessaire de se rapprocher le plus possible du comportement utilisateur. </p>
+
+<p>On utilise donc un module qui permet donc de cliquer sur des boutons. Pour se placer à chaque fois dans les configurations où l'on a accès aux données dans le code HTML. On utilise alors un Parser pour récupérer les données brutes</p>
+
+<p>Dans le cadre de la lecture d'un Graphe, il est nécessaire de pouvoir passer la souris au dessus de la courbe pour avoir accès aux valeurs de prix à cet instant. Encore une fois dans le cas contraire ces données ne sont pas accesible dans le code de la page. On fait donc bouger la souris d'un pas suffisament petit pour passer au dessus de tous les points du graphique. </p>
+
+<p>Le Package en lui-même est composé de 3 sous-modules :</p>
+
+<ul>
+<li><code>graph_scraper</code> : Cet itérateur est basé sur un algorithme de lecture des données de type graphes dans une page de Powernext, ce qui dans notre cas correspond à l'extraction de prix _Spots_. Il utilise le module <code>Selenium</code> pour bouger la souris sur toute la largeur du graphique. Il itère sur toutes les types de _GNL_ différend. 
+<ul>
+<li><code>Parameters</code>:
+<ul>
+<li>Il prend en argument <code>specific_type</code>, par défaut <code>False</code> , mais on peut ainsi accéder un type de GNL précis.</li>
+<li>Il prend en argument <code>link</code>, le lien auquel chercher le lien le graphique. </li>
+<li>Il prend en argument <code>bloc_number</code>, le numéro du bloc qui contient le graphe sur la page. Par défaut 0 dans le cadre de la page qui contient les prix spots. </li>
+</ul></li>
+<li><code>Return</code> : 
+<ul>
+<li>Il retourne de façon itérative, l'ensemble des données de prix contenus sur la page, l'unité ainsi que le type de GNL considéré. </li>
+<li>Dans l'ordre <code>unit, active, table</code></li>
+</ul></li>
+<li>La fonction lève des exceptions quand : 
+<ul>
+<li><strong>LEVER DES EXCEPTIONS</strong></li>
+- 
+</ul></li>
+</ul></li>
+<li><p><a id = 'table_scraper'><code>table_scraper</code></a> :  C'est itérateur est basé sur un algorithme de lecture des données de type tableau dans une page de Powernext, ce qui dans notre cas correspond à l'extraction de prix _Forward_. Il utilise le module <code>Selenium</code> pour accéder au code contenu dans le code <code>HTML</code>. Il itère sur toutes les types de _GNL_ différents.</p>
+
+<ul>
+<li><p><code>Parameters</code>:</p>
+
+<ul>
+<li>Il prend en argument <code>specific_type</code>, par défaut <code>False</code> , mais on peut ainsi accéder un type de GNL précis.</li>
+<li>Il prend en argument <code>link</code>, le lien auquel chercher le lien le graphique. </li>
+<li>Il prend en argument <code>bloc_number</code>, le numéro du bloc qui contient le graphe sur la page. Par défaut 3 dans le cadre de la page qui contient les prix forwards.</li>
+</ul></li>
+<li><p><code>Return</code> : </p>
+
+<ul>
+<li>Il retourne de façon itérative, l'ensemble des données de prix contenus sur la page, l'unité ainsi que le type de GNL considéré. </li>
+<li>Dans l'ordre <code>unit, active, table</code></li>
+</ul></li>
+<li>La fonction lève des exceptions quand : 
+<ul>
+<li>Top</li>
+</ul></li>
+</ul>
+
+<blockquote>
+  <p>Ces deux modules ont donc une architecture assez similaire, et les méthodes de Scrapping, que ce soit dans le cadre de graphe, ou bien dans le cadre de tableaux, sont intégrés dans une classe <code>Browser</code>.</p>
+  
+  <p>Ces deux premiers modules reposent sur un driver, <code>chromedriver.exe</code>, fournit avec le repo, et disponible à la racine du Repo. Il est nécessaire de posséder Chrome pour faire fonctionner les tâches automatisées. </p>
+</blockquote></li>
+<li><p><code>scrap_saver</code> : Fonction qui construit et update la base de données à partir des données fournies par les <code>Browser</code> de  <a href= #table_scraper><code>table_scraper</code></a> et <code>graph_scraper</code>, en deux partie, il scrappe d'abord toutes les données du jour, et enfin il ajoute aux données existantes les données qui n'ont pas été encore enregistrées. </p>
+
+<blockquote>
+  <p>On considère ici que il n'y a pas de consolidation à posteriori des données. Faisant que les données précedemment enregistrées ne puissent plus être considérée valables</p>
+  
+  <ul>
+  <li>Le Module est lancé par appel dans le terminal de la commande :
+  <code>python Web_Scraping/scrap_saver.py -d data_directory -p Product_type -s Specific_Market</code></li>
+  <li>Où <code>-d/--directory</code> correspond à la position relative du fichier d'enregistrement des données</li>
+  <li>Où <code>-p/--product</code> correspond au type de produit dont on désire la mise à jour, si non spécifié les deux, sinon rentrer <code>'Spot' ou 'Forward'</code></li>
+  <li>Où <code>-s/--specific</code> correspond au marché désiré. On peut utiliser un des acronymes disponibles sur <strong>Powernext</strong>.  </li>
+  <li><p>L'appel avec <code>-h / --help</code> permet d'afficher l'aide. </p></li>
+  <li><p>Le Module retourne l'ensemble des données mises à jour (si elles n'existent pas, le module crée l'architecture de donnée) au format <code>.csv</code>  </p></li>
+  </ul>
+</blockquote></li>
+</ul>
+
+<blockquote>
+  <p>Dans notre mise en place, les données les plus récentes sont sockées dans le fichier <code>./Data</code>. Où certaines sauvegardes sont conservées</p>
+</blockquote>
+
+<h2>Partie 2 : Diffusion de Prix</h2>
+
+<p>Module Diffusion_prix qui a pour objectif de génerer des diffusions de prix spot (instantané) à partir des données récupérées dans le module 1, c'est à dire l'historique des prix spots et forwards sur différents marchés, notamment PEG (France).</p>
+
+<p>Le module fonctionne aussi avec des historiques de prix d'autres sources, avec un prétraitement préalable pour que les fichiers csv en entrée du module aient un format adapté.</p>
+
+<p>L'utilisation se fait au travers de la classe <code>DiffusionSpot</code> définie dans le script <code>NewDiffusion.py</code>. 
+Cette classe est dotée de nombreuses fonctions facilitant l'utilisation des données, l'utilisation des dates et les fonctions permettant la diffusion de prix spot. Le détail de chaque fonction se trouve dans la documentation de la classe, accessible via l'attribut <code>__doc__</code> pour chacune de ces fonctions. On détaillera brièvement certaines d'entre elles lors de l'explication des scripts d'exécution.</p>
+
+<p>Il y a aussi quatres scripts <code>exec.py</code>, <code>exec2.py</code>, <code>exec3.py</code> et <code>execRF.py</code> qui illustrent la bonne utilisation de la classe DiffusionSpot dans quatres scénarios différents et avec un prétraitement lorsque nécessaire.</p>
+
+<ul>
+<li><p><code>exec.py</code>: path 1 et path 2 correspondent aux paths locaux des fichiers spots et forward récupérés avec le module 1. Ce script implémente une diffusion autour d'une courbe de forward issue à la date de début de la simulation. Ainsi, au premier jour de la simulation on prend les forwards donnés pour les quatres mois à venir et on effectue une diffusion du prix spot autour de ces forwards fixes. </p>
+
+<blockquote>
+  <p>On considère implicitement que le prix spot du gaz naturel devrait converger vers le prix forward issu précédemment. Si l'on note $S(t)$ le prix spot à un moment $t$ et $F(t, T)$ le prix forward donné à l'instant $t$ pour un contrant maturant à $T$. Ceci revient à dire que $S(t) \rightarrow_{t \rightarrow T} F(t, T)$. C'est discutable et on essaiera de se passer de cette hypothèse par la suite.</p>
+  
+  <ul>
+  <li>Le script nécessite de définir 5 dates. start_date_long et end_date_long définissent la période sur laquelle on estime les paramètres à long terme. Ici ils ne sont pas définis car pas nécessaires, on estime seulement la volatilité été/hiver (le marché du gaz naturel exhibant de fortes caractéristiques saisonnières) sur une période courte, définie par start_date et end_date. </li>
+  <li>La diffusion est effectuée entre end_date et end_date_sim. <strong>En sortie</strong> : Deux graphiques, un avec les diffusions spot l'autre avec la moyenne de ces diffusions comparée avec les forwards pour vérifier que la diffusion se fait bien autour de ces derniers. Un csv avec les 100 diffusions spots et la moyenne des scénarios. On utilise les fonctions <code>multiple_price_scenarios</code> et <code>show_multiple</code>.</li>
+  </ul>
+</blockquote></li>
+<li><p><code>exec2.py</code>: On utilise ici uniquement un historique de prix spot et pas de forward (avec un peu de formattage préalable). L'historique utilisé est Power_next_spot, placé dans le répertoire Diffusion_prix également. L'idée est de faire une diffusion de prix autour d'une moyenne à long terme qui elle même change à chaque pas en fonction de la volatilité long terme observée sur les données historiques. </p>
+
+<ul>
+<li>On défini 5 dates, les dates pour les paramètres à estimer sur le long terme, le court terme et puis la date de la fin de simulation (le début étant pris comme la dernière date utilisée pour l'estimation des paramètres court terme).</li>
+<li>en créant notre objet diff on fait bien attention à préciser forward_diffusion=False pour spécifier notre intention de faire une diffusion autour d'une moyenne long terme et non pas d'un forward diffusant ou pas.</li>
+<li>number_of_diffusion correspond au nombre de scénarios voulus</li>
+<li>On affiche trois graphiques. Le premier est celui des diffusions. Le deuxième illustre la moyenne long terme qui varie à cause de la volatilité long terme. On y affiche aussi la moyenne des scenarios de diffusion pour vérifier que ceux-ci se rapprochent bien de cette moyenne long terme. Le troisième compare l'évolution réellement observée du prix spot avec un des scénari.</li>
+<li>On écrit aussi un csv contenant toutes ces diffusions <code>Diffusion_model_fixed_forward</code> qui ont été effectuées à l'aide de <code>multiple_price_scenarios</code></li>
+</ul></li>
+<li><p><code>exec3.py</code>: On revient vers les données obtenues grâce au module 1. Au lieu de faire une diffusion autour d'un forward fixe pris sur le premier jour de la simulation on va faire une diffusion de prix forwards. La courbe des forwards considérés est systématiquement sur les quatres mois à venir. En reprennant les notations précédentes, on considère $F(t, t + \tau) = F(t, T)$ qu'on renote $F(t, \tau)$. Ainsi la deuxième variable n'est plus le temps de maturation du contrat forward en absolu mais un <em>temps à maturation</em> qui est <em>Mois+1, Mois+2, Mois+2, Mois+4</em> pour notre base de données. Nous avons maintenant quatre fonctions à une variable $F(t, \tau_{1})$, $F(t, \tau_{2})$, $F(t, \tau_{3})$ et $F(t, \tau_{4})$.  On effectue une diffusion de prix sur chacune de ces fonctions. </p>
+
+<ul>
+<li>Les dates comme précedemment</li>
+<li>Création de l'objet diff</li>
+<li>Génération d'une diffusion de prix forward avec un prix spot généré à chaque étape autour du forward. La fonction <code>pilipovic_dynamic_forward_simple</code> s'en charge. On ne fait dans cette fonction la diffusion que de $F(t, \tau_{1})$ car le prix spot qui nous intéresse généré à chaque étape est calculé autour de ce prix au mois+1. </li>
+<li>Itère cette fonction 1000 fois et en rangeant le résultat dans un fichier csv <code>Diffusion_model_dynamic_forward</code></li>
+<li>Génération d'une diffusion de prix forward avec de multiples scénarios spot sur les quatre mois suivants calculés à chaque étape. C'est à dire qu'au jour t, ayant diffusé nos quatres fonctions forward on a accès à une estimation des forwards pour les quatres mois à venir. De multiples scénarios de prix spot sont ensuite générés à partir de ces forwards estimés au jour t. Le lendemain au jour t+1 la diffusion de forward a donnée de nouvelles estimations pour les forwards sur les quatres mois à venir. Ainsi, on génère de nouveaux scénarios spots.</li>
+<li>Le résultat de <code>pilipovic_dynamic_forward_multiple</code> est donc quatre diffusion des forwards entre end_date et end_date_sim et un dictionnaire. Les clés de ce dictionnaire étant chaque jour de la simulation et les valeurs associées des tableaux contenant les <strong>m</strong> scénarios de spot sur les quatres mois suivants chaque date.</li>
+<li>On affiche deux graphiques par souci de clarté, le deuxième est un exemple de diffusion des quatres forwards avec temps à maturation fixé. Le premier est un exemple d'une des 1000 itérations de pilipovic_dynamic_forward_simple.</li>
+</ul></li>
+<li><p><code>execRF.py</code>: Changement d'approche. Au lieu de considérer l'évolution du prix spot avec des formules stochastiques il s'agit d'implémenter des algorithmes de machine learning de prédiction. Random Forest en regression à été utilisé.</p>
+
+<ul>
+<li>On créé d'abord nos features...</li>
+</ul></li>
+</ul>
+
+<h2>Partie 3 : Optimisation du stockage</h2>
+
+<p>La première étape consiste à optimiser la gestion d'un stockage de Gaz naturel en supposant que l'on connait parfaitement le prix du Gaz Naturel sur toute une période donnée.</p>
+
+<h3>Modélisation</h3>
+
+<p>On va modéliser un Stockage souterrain de Gaz cela correspond à la Classe <code>Stockage</code> définie dans <code>storage_optimisation/stockage.py</code>.
+- Le stockage possède des contraintes intrinsèques que sont essentiellement sont volume et son remplissage au début de la période.
+- Le Stockage possède des débits d'injection et de soutirage qui varient en fonction du remplissage. 
+- Dans une optique d'assurer des stocks stratégiques, le stockage doit être quasimment plein au début de l'hiver. Et dans une volonté d'assurer la pérennité du stockage, celui-ci doit être quasi-vide au début de l'été. Cela se représente par des fonctions portes que doit éviter le volume de remplissage du stockage</p>
+
+<ul>
+<li>Les règles dépendent des caractéristiques des  différents stockage, c'ets pourquoi l'on travaillera avec sous-classes, correspondant avec des stockages, ayant des valeurs nominales différentes. Certains sont des stockages à la grande capacité mais très peu flexible sur l'achat-cente, quand d'autres sont beaucoup plus flexibles </li>
+</ul>
+
+<p>Le stockage est donc définit par la classe <code>Stockage</code>, qui se construit à partir d'un volume maximal <code>Vmax</code>, un volume initial <code>Vinit</code>, les prix sur une période <code>data</code>, mais aussi la vente algébrique pour chacun de ces jours <code>evolution</code>. </p>
+
+<p>La classe <code>Stockage</code> possède les attributs
+- <code>Vmax</code>, <code>data</code>, <code>Vinit</code>, <code>evolution</code>
+- <code>data</code> qui correspond à l'évolution des prix sur la pértiode d'existence du stockage
+- <code>dates</code>, l'ensemble des dates de la période sur laquelle on considère le stockage, et pour lesquelles on a une donnée de prix.
+- <code>index_i</code> et <code>index_f</code>, les numéros d'index initial et final de la dataframe
+- <code>N</code> le nombre de jours considérés
+- <code>m</code> un objet de la classe <code>Matrice</code> qui contient un ensemble de matrices particulières utiles pour effectuer les calculs.
+- <code>months_con</code>, les contraintes de remplissage les premiers du mois encodées sous la forme d'un dictionnaire <code>{ "numéro du mois" : ['%min', '%max'], ...}</code>
+- <code>v</code> le volume correspondant à l'évolution du volume considérée dans <code>evolution</code>
+- <code>volume_end</code>
+- <code>vect_min</code>
+- <code>vect_max</code>
+- <code>lim_min</code>
+- <code>lim_max</code></p>
+
+<p>Méthodes : 
+- <code>plot_threshold</code>
+- <code>plot_tunnel</code>
+- <code>plot_injection</code>
+- <code>volume_vect</code></p>
+
+<p>On définit à partir de cette classe <code>Stockage</code> touteune variété de sous classe qui héritent de cette classe <code>Stockage</code>, mais qui correspondent à des paramètres différent en capacité de soutirage et d'injection. Ces classes prennent en entrée les mêmes arguments que la classe <code>Stockage</code> initiale.</p>
+
+<p>Ces classes sont : </p>
+
+<ul>
+<li><code>Sediane_Nord_20</code></li>
+<li><code>Saline_20</code></li>
+<li><code>Serene_Atlantique_20</code></li>
+<li><code>Serene_Nord_20</code></li>
+</ul>
+
+<p>Ces différents stockages correspondent à ce qui est attendu </p>
+
+<blockquote>
+  <p>Classe <code>Matrice</code></p>
+</blockquote>
+
+
+</div></div>
+    </div>
+  </article>
+
+  <section class="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+
+  
+</div>
+</div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://youtube.com/c/prettyprintedtutorials">
+                <i class="fab fa-fw fa-youtube"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/prettyprinted">
+                <i class="fab fa-fw fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://twitter.com/pretty_printed">
+                <i class="fab fa-fw fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; PrettyPrinted.com 2019</small>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</body>
+
+</html>
